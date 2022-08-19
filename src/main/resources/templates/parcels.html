@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/employees.css}" rel="stylesheet" />
+    <link th:href="@{/css/customerForms.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Parcels</h1>
+    </div>
+
+
+    <div class="textContainerN3">
+        <div class="catalogMiniContainerM8" id="first">ID</div>
+        <div class="catalogMiniContainerM8" id="second">Sender</div>
+        <div class="catalogMiniContainerM8" id="third">Receiver</div>
+        <div class="catalogMiniContainerM8" id="fourth">Delivery address</div>
+        <div class="catalogMiniContainerM8" id="fifth">Price</div>
+        <div class="catalogMiniContainerM8" id="sixth">Weight</div>
+        <div class="catalogMiniContainerM8" id="seventeenth">Status</div>
+        <div class="catalogMiniContainerM8" id="seventh">Edit</div>
+        <div class="catalogMiniContainerM8" id="eight">Delete</div>
+    </div>
+
+    <div class="textContainerN2">
+        <div th:if="${parcels.isEmpty()}">No employees available</div>
+        <div th:each="parcel : ${parcels}">
+            <div th:text="${parcel.id}" class="catalogMiniContainer8" id="thirteen"> </div>
+            <div th:text="${parcel.sender.user.getLastName()}" class="catalogMiniContainer8" id="nine"> </div>
+            <div th:text="${parcel.receiver.user.getLastName()}" class="catalogMiniContainer8" id="tenth"> </div>
+            <div th:text="${parcel.deliveryAddress}" class="catalogMiniContainer8" id="eleventh"> </div>
+            <div th:text="${parcel.price}" class="catalogMiniContainer8" id="twelve"> </div>
+            <div th:text="${parcel.weight}" class="catalogMiniContainer8" id="fourteenth"> </div>
+            <div th:text="${parcel.parcelStatus}" class="catalogMiniContainer8" id="eighteen"> </div>
+            <a th:href="@{/parcels/edit/{id}(id=${parcel.id})}" class="catalogMiniContainer8" id="fifteen">Edit</a>
+            <a th:href="@{/parcels/delete/{id}(id=${parcel.id})}" class="catalogMiniContainer8" id="sixteen">Delete</a>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

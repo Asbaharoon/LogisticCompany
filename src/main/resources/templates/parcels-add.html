@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/customers-add.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Add a new parcel</h1>
+    </div>
+
+    <div class="textContainerN">
+        <div class="formContainer1" id="left">
+            <div>Sender ID:</div>
+            <div>Receiver ID:</div>
+            <div>Office ID:</div>
+            <div>Delivery address:</div>
+            <div>Weight:</div>
+            <div>Transport cost:</div>
+            <div>Price:</div>
+            <div>Parcel status:</div>
+        </div>
+        <div class="formContainer2" id="right">
+            <form action="#" th:action="@{/parcels/add}" th:object="${parcel}" method="post">
+                <div class="formContainer4"><input type="text" th:field="*{sender.id}" /></div>
+                <div class="formContainer4"><input type="text" th:field="*{receiver.id}" /></div>
+                <div class="formContainer4"><input type="text" th:field="*{sentFromOffice}" /></div>
+                <div class="formContainer4"><input type="text" th:field="*{deliveryAddress}" /></div>
+                <div class="formContainer4"><input type="text" th:field="*{weight}" /></div>
+                <div class="formContainer4"><input type="text" th:field="*{transportCost}" /></div>
+                <div class="formContainer4"><input type="" th:field="*{price}" /></div>
+                <div class="formContainer4"><select name="parcelStatus">
+                    <option th:each="parcelStatuss:${T(constant.ParcelStatus).values()}"
+                            th:value="${parcelStatuss}"
+                            th:text="${parcelStatuss}"></option>
+                </select></div>
+                <div><input type="submit" value="Submit" /></div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

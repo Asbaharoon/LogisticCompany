@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/employees.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Employees</h1>
+    </div>
+
+
+    <div class="textContainerN3">
+        <div class="catalogMiniContainerM2" id="first">ID</div>
+        <div class="catalogMiniContainerM2" id="second">First name</div>
+        <div class="catalogMiniContainerM2" id="third">Last name</div>
+        <div class="catalogMiniContainerM2" id="fourth">Salary</div>
+        <div class="catalogMiniContainerM2" id="fifth">Employee type</div>
+        <div class="catalogMiniContainerM2" id="sixth">Office</div>
+        <div class="catalogMiniContainerM2" id="seventh">Edit</div>
+        <div class="catalogMiniContainerM2" id="eight">Delete</div>
+    </div>
+
+    <div class="textContainerN2">
+        <div th:if="${employees.isEmpty()}">No employees available</div>
+        <div th:each="employee : ${employees}">
+            <div th:text="${employee.id}" class="catalogMiniContainer2" id="thirteen"> </div>
+            <div th:text="${employee.user.firstName}" class="catalogMiniContainer2" id="nine"> </div>
+            <div th:text="${employee.user.lastName}" class="catalogMiniContainer2" id="tenth"> </div>
+            <div th:text="${employee.salary}" class="catalogMiniContainer2" id="eleventh"> </div>
+            <div th:text="${employee.employeeType}" class="catalogMiniContainer2" id="twelve"> </div>
+            <div class="catalogMiniContainer2" id="fourteenth">
+                <div th:each="office : ${employee.getOffice()}">
+                    <div th:text="${employee.getOffice().getId()}" id="center"> </div>
+                </div>
+            </div>
+            <a th:href="@{/employees/edit/{id}(id=${employee.id})}" class="catalogMiniContainer2" id="fifteen">Edit</a>
+            <a th:href="@{/employees/delete/{id}(id=${employee.id})}" class="catalogMiniContainer2" id="sixteen">Delete</a>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

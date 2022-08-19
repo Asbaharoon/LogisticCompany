@@ -1,0 +1,47 @@
+.formContainer1{
+    width: 48%;
+    max-height: 100%;
+    text-align: right;
+    margin: 1em auto auto;
+    box-sizing: border-box;
+    line-height: 2.5;
+}
+
+.formContainer2{
+    width: 48%;
+    max-height: 100%;
+    text-align: left;
+    margin: 1em auto auto;
+    box-sizing: border-box;
+    line-height: 2.5;
+}
+
+#left{
+    float: left;
+    box-sizing: border-box;
+}
+#right{
+    float: right;
+    box-sizing: border-box;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(5, 49, 109, 100);;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.btn:hover, .btn:active {
+    background-color: rgba(40, 70, 126, 0.71);
+    box-sizing: border-box;
+}
+
+.btn.active {
+    background-color: rgba(40, 70, 126, 0.71);
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}

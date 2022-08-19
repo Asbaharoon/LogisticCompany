@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/employees.css}" rel="stylesheet" />
+    <link th:href="@{/css/customerForms.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Unanswered questions</h1>
+    </div>
+
+    <div class="textContainerN3">
+        <div class="catalogMiniContainerM8" id="first">ID</div>
+        <div class="catalogMiniContainerM8" id="second">First name</div>
+        <div class="catalogMiniContainerM8" id="third">Last name</div>
+        <div class="catalogMiniContainerM8" id="fourth">Email</div>
+        <div class="catalogMiniContainerM8" id="fifth">Phone number</div>
+        <div class="catalogMiniContainerM8" id="fifteen">Content</div>
+        <div class="catalogMiniContainerM8" id="eighteen">Answers</div>
+        <div class="catalogMiniContainerM8" id="sixth">Answer</div>
+        <div class="catalogMiniContainerM8" id="seventh">Delete</div>
+    </div>
+
+    <div class="textContainerN2">
+        <div th:if="${unansweredForms.isEmpty()}">No customers available</div>
+        <div th:each="unanswerdForm : ${unansweredForms}">
+            <div th:text="${unanswerdForm.getId()}" class="catalogMiniContainer8" id="eight"> </div>
+            <div th:text="${unanswerdForm.getCFirstName()}" class="catalogMiniContainer8" id="nine"> </div>
+            <div th:text="${unanswerdForm.getCLastName()}" class="catalogMiniContainer8" id="tenth"> </div>
+            <div th:text="${unanswerdForm.getCEmailAddress()}" class="catalogMiniContainer8" id="eleventh"> </div>
+            <div th:text="${unanswerdForm.getCPhoneNumber()}" class="catalogMiniContainer8" id="twelve"> </div>
+            <div th:text="${unanswerdForm.getContent()}" class="catalogMiniContainer9" id="sixteen"> </div>
+            <div th:text="${unanswerdForm.getAnswer()}" class="catalogMiniContainer9" id="seventeenth"> </div>
+            <a th:href="@{/customerForms/answer/{id}(id=${unanswerdForm.id})}" class="catalogMiniContainer8" id="thirteen">Answer</a>
+            <a th:href="@{/customerForms/delete/{id}(id=${unanswerdForm.id})}" class="catalogMiniContainer8" id="fourteenth">Delete</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

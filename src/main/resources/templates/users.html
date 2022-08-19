@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/employees.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Users</h1>
+    </div>
+
+    <div class="textContainerN">
+        <a th:href="@{/users/add}">Add User</a>
+    </div>
+
+    <div class="textContainerN3">
+        <div class="catalogMiniContainerM2" id="first">ID</div>
+        <div class="catalogMiniContainerM2" id="second">First name</div>
+        <div class="catalogMiniContainerM2" id="third">Last name</div>
+        <div class="catalogMiniContainerM2" id="fourth">Email</div>
+        <div class="catalogMiniContainerM2" id="fifth">Username</div>
+        <div class="catalogMiniContainerM2" id="fifteen">Status</div>
+        <div class="catalogMiniContainerM2" id="sixth">Edit</div>
+        <div class="catalogMiniContainerM2" id="seventh">Delete</div>
+    </div>
+
+    <div class="textContainerN2">
+        <div th:if="${users.isEmpty()}">No customers available</div>
+        <div th:each="user : ${users}">
+            <div th:text="${user.id}" class="catalogMiniContainer2" id="eight"> </div>
+            <div th:text="${user.firstName}" class="catalogMiniContainer2" id="nine"> </div>
+            <div th:text="${user.lastName}" class="catalogMiniContainer2" id="tenth"> </div>
+            <div th:text="${user.email}" class="catalogMiniContainer2" id="eleventh"> </div>
+            <div th:text="${user.username}" class="catalogMiniContainer2" id="twelve"> </div>
+            <div th:text="${user.isActive()}" class="catalogMiniContainer2" id="sixteen"> </div>
+            <a th:href="@{/users/edit/{id}(id=${user.id})}" class="catalogMiniContainer2" id="thirteen">Edit</a>
+            <a th:href="@{/users/delete/{id}(id=${user.id})}" class="catalogMiniContainer2" id="fourteenth">Delete</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

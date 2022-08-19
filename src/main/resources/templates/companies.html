@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	<link th:href="@{/css/customers.css}" rel="stylesheet" />
+	<link th:href="@{/css/employees.css}" rel="stylesheet" />
+	<link th:href="@{/css/companies.css}" rel="stylesheet" />
+	<title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+	<div th:replace="fragments :: navbar" />
+
+	<div class="textContainerN"></div>
+
+	<div class="textContainerN col-12">
+		<h1 class="h1">Companies</h1>
+	</div>
+
+	<div class="textContainerN">
+		<a th:href="@{/companies/add}">Add Company</a>
+	</div>
+
+	<div class="textContainerN3">
+		<div class="catalogMiniContainerM4" id="first">ID</div>
+		<div class="catalogMiniContainerM4" id="second">Name</div>
+		<div class="catalogMiniContainerM4" id="third">Address</div>
+		<div class="catalogMiniContainerM4" id="eleventh">Show statistics</div>
+		<div class="catalogMiniContainerM4" id="seventh">Edit</div>
+		<div class="catalogMiniContainerM4" id="eight">Delete</div>
+	</div>
+
+	<div class="textContainerN2">
+		<div th:if="${companies.isEmpty()}">No employees available</div>
+		<div th:each="company : ${companies}">
+			<div th:text="${company.id}" class="catalogMiniContainer4" id="thirteen"> </div>
+			<div th:text="${company.name}" class="catalogMiniContainer4" id="nine"> </div>
+			<div th:text="${company.address}" class="catalogMiniContainer4" id="tenth"> </div>
+			<a th:href="@{/companies/profit/{id}(id=${company.id})}" class="catalogMiniContainer4" id="twelve">Show statistics</a>
+			<a th:href="@{/companies/edit/{id}(id=${company.id})}" class="catalogMiniContainer4" id="fifteen">Edit</a>
+			<a th:href="@{/companies/delete/{id}(id=${company.id})}" class="catalogMiniContainer4" id="sixteen">Delete</a>
+		</div>
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

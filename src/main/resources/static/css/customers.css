@@ -1,0 +1,294 @@
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1024px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .box {
+        width: 70%;
+        box-sizing: border-box;
+    }
+    .popup {
+        width: 70%;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: rgba(5, 49, 109, 100);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        z-index: 123;
+        display: inline-block;
+        font-size: 10px;
+        box-sizing: border-box;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 2px 7px;
+        text-decoration: none;
+        font-size: 10px;
+        line-height: 35px;
+        box-sizing: border-box;
+    }
+
+    .navbar a:hover {
+        background: rgba(40, 70, 126, 0.71);
+        color: rgb(255, 255, 255);
+        box-sizing: border-box;
+    }
+
+    .main {
+        padding: 16px;
+        margin-top: 30px;
+        height: 1500px;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgba(255, 255, 255, 255);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        box-sizing: border-box;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 7%;
+        position: relative;
+        margin-top: 25%;
+        padding-top: 9%;
+        box-sizing: border-box;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+        box-sizing: border-box;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 55%;
+        width: auto;
+        margin-top: -7px;
+        text-align: center;
+        padding: 1% 3%;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        font-size: 30px;
+        transition: 5s;
+        border-radius: 0 3px 3px 0;
+        box-sizing: border-box;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        box-sizing: border-box;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(255, 255, 255, 0.365);
+        box-sizing: border-box;
+    }
+
+    .textContainer {
+        width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 105%;
+        margin: 14% 0px 3% 0px;
+        background-color: rgba(40, 70, 126, 0.71);
+        text-align: center;
+        border: 10px solid rgba(5, 49, 109, 100);
+        color: rgb(255, 255, 255);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 12px;
+        box-sizing: border-box;
+    }
+
+    .textStyle {
+        padding: 2em;
+        box-sizing: border-box;
+    }
+
+    .logoImgStyle{
+        width:15%;
+        height:15%;
+        outline:none;
+        box-sizing: border-box;
+    }
+
+    .logoImgMenu{
+        width:15%;
+        height:15%;
+        outline:none;
+        box-sizing: border-box;
+    }
+
+}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgba(5, 49, 109, 100);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    z-index: 123;
+    padding: -1em;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
+    box-sizing: border-box;
+}
+
+.navbar a:hover {
+    background: rgba(40, 70, 126, 0.71);
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+.main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(255, 255, 255, 255);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.textContainer {
+    width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 105%;
+    margin: 14% 0px 3% 0px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.textStyle {
+    padding: 2em;
+    box-sizing: border-box;
+}
+
+.logoImgStyle{
+    width:15%;
+    height:15%;
+    outline:none;
+    box-sizing: border-box;
+}
+
+.logoImgMenu{
+    top: 20%;
+    width:50%;
+    height:50%;
+    outline:none;
+    box-sizing: border-box;
+}
+
+.textContainerN{
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 20%;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    margin: 2% auto 3%;
+}
+.textContainerN2{
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 20%;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    margin: 2% auto 3%;
+}
+
+.catalogMiniContainerM{
+    width: 14%;
+    max-height: 100%;
+    margin: 1em auto auto;
+    background-color: rgba(5, 49, 109, 100);
+    color: white;
+    border: 2px solid rgba(5, 49, 109, 100);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.catalogMiniContainer{
+    width: 14%;
+    max-height: 100%;
+    margin: 1em auto auto;
+    border: 2px solid rgba(5, 49, 109, 100);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#first, #second, #third, #fourth, #fifth, #sixth, #seventh, #eight, #nine, #tenth, #eleventh, #twelve, #thirteen,
+#fourteenth,  #fifteen, #sixteen, #seventeenth, #eighteen, #twenty, #twentyone {
+    float: left;
+    box-sizing: border-box;
+}

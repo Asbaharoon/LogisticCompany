@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/customers-add.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Add a new user</h1>
+    </div>
+
+    <div class="textContainerN">
+        <div class="formContainer1" id="left">
+            <div>First name:</div>
+            <div>Last name:</div>
+            <div>Email:</div>
+            <div>Username:</div>
+            <div>Password:</div>
+        </div>
+        <div class="formContainer2" id="right">
+            <form action="#" th:action="@{/users/add}" th:object="${user}" method="post">
+                <div><input type="text" th:field="*{firstName}" /></div>
+                <div><input type="text" th:field="*{lastName}" /></div>
+                <div><input type="email" th:field="*{email}" /></div>
+                <div><input type="text" th:field="*{username}" /></div>
+                <div><input type="password" th:field="*{password}" /></div>
+                <div><input type="submit" value="Submit" /></div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

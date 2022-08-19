@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/customers-add.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Reports</h1>
+    </div>
+
+    <div class="textContainerN">
+        <div class="formContainer1" id="left">
+            <div>Companies:</div>
+            <div>Users:</div>
+            <div>Customers:</div>
+            <div>Employees:</div>
+            <div>Offices:</div>
+            <div>Parcels:</div>
+            <div>Questions and Answers</div>
+        </div>
+        <div class="formContainer2" id="right">
+            <div><a href="./companies">Show report</a></div>
+            <div><a href="./users">Show report</a></div>
+            <div><a href="./customers">Show report</a></div>
+            <div><a href="./employees">Show report</a></div>
+            <div><a href="./offices">Show report</a></div>
+            <div><a href="./parcels">Show report</a></div>
+            <div><a href="./customerForms">Show report</a> </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

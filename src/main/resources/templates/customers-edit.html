@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	<link th:href="@{/css/customers.css}" rel="stylesheet" />
+	<link th:href="@{/css/customers-add.css}" rel="stylesheet" />
+	<link th:href="@{/css/customers-edit.css}" rel="stylesheet" />
+	<title>Logistic customer app</title>
+</head>
+
+<body>
+<!--<div class="row">-->
+	<div th:replace="fragments :: navbar" />
+
+	<div class="textContainerN"></div>
+
+	<div class="textContainerN col-12">
+		<h1 class="h1">Edit a customer</h1>
+	</div>
+<div class="textContainerN2">
+<form action="#" th:action="@{/customers/edit/{id}(id=${customer.id})}" th:object="${customer}" th:method="post">
+	<label>First name:</label><br>
+	<input type="text" th:field="*{user.firstName}" /><br><br>
+				<label>Last name:</label><br>
+	<input type="text" th:field="*{user.lastName}" /><br><br>
+                    <label>Email:</label><br>
+	<input type="email" th:field="*{user.email}" /><br><br>
+
+                    <label>Username:</label><br>
+	<input type="text" th:field="*{user.username}" /><br><br>
+
+                    <label>Password:</label><br>
+	<input type="password" th:field="*{user.password}" /><br><br>
+
+	<label>Address:</label><br>
+	<input type="text" th:field="*{address}" /><br><br>
+	<input type="submit" value="Submit" />
+        </form>
+</div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script
+                src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        </body>
+        </html>

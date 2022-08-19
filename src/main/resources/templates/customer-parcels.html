@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link th:href="@{/css/customers.css}" rel="stylesheet" />
+  <link th:href="@{/css/employees.css}" rel="stylesheet" />
+  <link th:href="@{/css/customerForms.css}" rel="stylesheet" />
+  <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+  <div th:replace="fragments :: navbar" />
+
+  <div class="textContainerN"></div>
+
+  <div class="textContainerN col-12">
+    <h1 class="h1">Parcels</h1>
+  </div>
+  
+  <div class="textContainerN3">
+    <div class="catalogMiniContainerM" id="first">ID</div>
+    <div class="catalogMiniContainerM" id="second">Sender</div>
+    <div class="catalogMiniContainerM" id="third">Receiver</div>
+    <div class="catalogMiniContainerM" id="fourth">Delivery address</div>
+    <div class="catalogMiniContainerM" id="fifth">Price</div>
+    <div class="catalogMiniContainerM" id="sixth">Weight</div>
+    <div class="catalogMiniContainerM" id="seventeenth">Status</div>
+  </div>
+
+  <div class="textContainerN2">
+    <div th:if="${parcels.isEmpty()}">No employees available</div>
+    <div th:each="parcel : ${parcels}">
+      <div th:text="${parcel.id}" class="catalogMiniContainer" id="thirteen"> </div>
+      <div th:text="${parcel.sender.user.getLastName()}" class="catalogMiniContainer" id="nine"> </div>
+      <div th:text="${parcel.receiver.user.getLastName()}" class="catalogMiniContainer" id="tenth"> </div>
+      <div th:text="${parcel.deliveryAddress}" class="catalogMiniContainer" id="eleventh"> </div>
+      <div th:text="${parcel.price}" class="catalogMiniContainer" id="twelve"> </div>
+      <div th:text="${parcel.weight}" class="catalogMiniContainer" id="fourteenth"> </div>
+      <div th:text="${parcel.parcelStatus}" class="catalogMiniContainer" id="eighteen"> </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

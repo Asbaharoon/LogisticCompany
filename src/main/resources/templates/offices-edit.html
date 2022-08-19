@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/customers-add.css}" rel="stylesheet" />
+    <link th:href="@{/css/customers-edit.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Edit a office</h1>
+    </div>
+
+    <div class="textContainerN2">
+    <form action="#" th:action="@{/offices/edit/{id}(id=${office.id})}" th:object="${office}" th:method="post">
+        <label>Address</label><br>
+        <input type="text" th:field="*{address}" /><br><br>
+        <label>Rent</label><br>
+        <input type="text" th:field="*{rent}" /><br><br>
+        <label>Company</label><br>
+        <input type="text" th:field="*{company}" /><br><br>
+        <label>Employees</label><br>
+        <input type="text" th:field="*{employees}" /><br><br>
+        <label>Parcels</label><br>
+        <input type="text" th:field="*{parcels}" /><br><br>
+        <input type="submit" value="Submit" />
+    </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

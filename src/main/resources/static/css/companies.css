@@ -1,0 +1,19 @@
+.catalogMiniContainerM4{
+    width: 16.6%;
+    max-height: 100%;
+    margin: 1em auto auto;
+    background-color: rgba(5, 49, 109, 100);
+    color: white;
+    border: 2px solid rgba(5, 49, 109, 100);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.catalogMiniContainer4{
+    width: 16.6%;
+    max-height: 100%;
+    margin: 1em auto auto;
+    border: 2px solid rgba(5, 49, 109, 100);
+    box-sizing: border-box;
+    text-align: center;
+}

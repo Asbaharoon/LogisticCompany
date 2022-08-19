@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link th:href="@{/css/customers.css}" rel="stylesheet" />
+    <link th:href="@{/css/employees.css}" rel="stylesheet" />
+    <link th:href="@{/css/customerForms.css}" rel="stylesheet" />
+    <title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+    <div th:replace="fragments :: navbar" />
+
+    <div class="textContainerN"></div>
+
+    <div class="textContainerN col-12">
+        <h1 class="h1">Questions</h1>
+    </div>
+
+
+    <div class="textContainerN3">
+        <div class="catalogMiniContainerM5" id="first">ID</div>
+        <div class="catalogMiniContainerM5" id="second">First name</div>
+        <div class="catalogMiniContainerM5" id="third">Last name</div>
+        <div class="catalogMiniContainerM5" id="fourth">Email</div>
+        <div class="catalogMiniContainerM5" id="fifth">Phone number</div>
+        <div class="catalogMiniContainerM5" id="fifteen">Content</div>
+        <div class="catalogMiniContainerM5" id="eighteen">Answers</div>
+    </div>
+
+    <div class="textContainerN2">
+        <div th:if="${customerForms.isEmpty()}">No customers available</div>
+        <div th:each="customerForm : ${customerForms}">
+            <div th:text="${customerForm.getId()}" class="catalogMiniContainer5" id="eight"> </div>
+            <div th:text="${customerForm.getCFirstName()}" class="catalogMiniContainer5" id="nine"> </div>
+            <div th:text="${customerForm.getCLastName()}" class="catalogMiniContainer5" id="tenth"> </div>
+            <div th:text="${customerForm.getCEmailAddress()}" class="catalogMiniContainer5" id="eleventh"> </div>
+            <div th:text="${customerForm.getCPhoneNumber()}" class="catalogMiniContainer5" id="twelve"> </div>
+            <div th:text="${customerForm.getContent()}" class="catalogMiniContainer6" id="sixteen"> </div>
+            <div th:text="${customerForm.getAnswer()}" class="catalogMiniContainer6" id="seventeenth"> </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

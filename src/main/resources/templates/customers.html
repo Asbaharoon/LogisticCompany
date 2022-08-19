@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	<link th:href="@{/css/customers.css}" rel="stylesheet" />
+	<title>Logistic customer app</title>
+</head>
+
+<body>
+<div class="row">
+	<div th:replace="fragments :: navbar" />
+
+	<div class="textContainerN"></div>
+
+	<div class="textContainerN col-12">
+		<h1 class="h1">Customers</h1>
+	</div>
+
+	<div class="textContainerN">
+		<div class="catalogMiniContainerM" id="first">ID</div>
+		<div class="catalogMiniContainerM" id="second">First name</div>
+		<div class="catalogMiniContainerM" id="third">Last name</div>
+		<div class="catalogMiniContainerM" id="fourth">Address</div>
+		<div class="catalogMiniContainerM" id="fifth">User name</div>
+		<div class="catalogMiniContainerM" id="sixth">Edit</div>
+		<div class="catalogMiniContainerM" id="seventh">Delete</div>
+	</div>
+
+	<div class="textContainerN2">
+		<div th:if="${customers.isEmpty()}">No customers available</div>
+		<div th:each="customer : ${customers}">
+			<div th:text="${customer.id}" class="catalogMiniContainer" id="eight"> </div>
+			<div th:text="${customer.user.firstName}" class="catalogMiniContainer" id="nine"> </div>
+			<div th:text="${customer.user.lastName}" class="catalogMiniContainer" id="tenth"> </div>
+			<div th:text="${customer.address}" class="catalogMiniContainer" id="eleventh"> </div>
+			<div th:text="${customer.user.email}" class="catalogMiniContainer" id="twelve"> </div>
+			<a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="catalogMiniContainer" id="thirteen">Edit</a>
+			<a th:href="@{/customers/delete/{id}(id=${customer.id})}" class="catalogMiniContainer" id="fourteenth">Delete</a>
+		</div>
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--<meta charset="ISO-8859-1">-->
+<!--<link rel="stylesheet"-->
+<!--	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+<!--<title>Logistic customer app</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--	<h1>Customers</h1>-->
+<!--	<br />-->
+
+<!--	<table>-->
+<!--		<thead>-->
+<!--			<tr>-->
+<!--				<th>Id</th>-->
+<!--				<th>First name</th>-->
+<!--				<th>Last name</th>-->
+<!--				<th>Address</th>-->
+<!--				<th>User name</th>-->
+<!--				<th>Edit</th>-->
+<!--				<th>Delete</th>-->
+<!--			</tr>-->
+<!--		</thead>-->
+<!--		<tbody>-->
+<!--			<tr th:if="${customers.empty}">-->
+<!--				<td colspan="2">No customers available</td>-->
+<!--			</tr>-->
+<!--			<tr th:each="customer : ${customers}">-->
+<!--				<td><span th:text="${customer.id}"> </span></td>-->
+<!--				<td><span th:text="${customer.user.firstName}"> </span></td>-->
+<!--				<td><span th:text="${customer.user.lastName}"> </span></td>-->
+<!--				<td><span th:text="${customer.address}"> </span></td>-->
+<!--				<td><span th:text="${customer.user.email}"> </span></td>-->
+<!--				<td><a th:href="@{/customers/edit/{id}(id=${customer.id})}">Edit</a></td>-->
+<!--				<td><a th:href="@{/customers/delete/{id}(id=${customer.id})}">Delete</a></td>-->
+<!--			</tr>-->
+<!--		</tbody>-->
+<!--	</table>-->
+
+
+<!--	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+<!--	<script-->
+<!--		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
